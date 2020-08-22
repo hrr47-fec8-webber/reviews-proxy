@@ -11,7 +11,6 @@ app.use((req, res, next) => {
 
 app.use('/:id', express.static(__dirname + '/lib'));
 
-
 app.get('/api/images/:id' , (req, res) => {
   request(
     { url: `http://54.149.79.170:3001/api/images/${req.params.id}` },
@@ -27,7 +26,7 @@ app.get('/api/images/:id' , (req, res) => {
 
 app.get('/api/booking/:id' , (req, res) => {
   request(
-    { url: `http://localhost:3002/api/booking/${req.params.id}` },
+    { url: `http://54.219.135.220:3002/api/booking/${req.params.id}` },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
@@ -40,7 +39,7 @@ app.get('/api/booking/:id' , (req, res) => {
 
 app.get('/assets/airbnb_rating_star.png' , (req, res) => {
   request(
-    { url: `http://localhost:3002/api/booking/${req.params.id}` },
+    { url: `http://54.219.135.220:3002/api/booking/${req.params.id}` },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
