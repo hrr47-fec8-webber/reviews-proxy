@@ -14,7 +14,7 @@ app.use('/:id', express.static(__dirname + '/lib'));
 
 app.get('/api/images/:id' , (req, res) => {
   request(
-    { url: `http://localhost:3001/api/images/${req.params.id}` },
+    { url: `http://54.149.79.170:3001/api/images/${req.params.id}` },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
@@ -52,7 +52,7 @@ app.get('/assets/airbnb_rating_star.png' , (req, res) => {
 });
 app.get('/api/overall_reviews/:id', (req, res) => {
   request(
-    { url: `http://localhost:3000/api/overall_reviews/${req.params.id}` },
+    { url: `http://18.217.248.48:3000/api/overall_reviews/${req.params.id}` },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
@@ -64,7 +64,7 @@ app.get('/api/overall_reviews/:id', (req, res) => {
 
 app.get('/api/individual_reviews/:id' , (req, res) => {
   request(
-    { url: `http://localhost:3000/api/individual_reviews/${req.params.id}` },
+    { url: `http://18.217.248.48:3000/api/individual_reviews/${req.params.id}` },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: error.message });
